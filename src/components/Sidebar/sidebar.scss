@@ -1,0 +1,100 @@
+.sidebar {
+  position: relative;
+  height: 85vh;
+  max-width: 45px;
+  border: 1px solid #fcb818;
+  border-radius: 15px;
+  box-shadow: 0 0 7px #fcb818;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin: 0 7px 40px;
+    gap: 5px;
+    cursor: pointer;
+    &-img {
+      max-width: 30px;
+      width: 100%;
+      object-fit: cover;
+      align-self: center;
+    }
+    &-name {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  &__bottom-block {
+    margin-top: auto;
+  }
+
+  &__link {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.4s;
+    opacity: 0.6;
+    margin-bottom: 10px;
+    &:hover {
+      opacity: 1;
+      background-color: #ecbb4a5b;
+    }
+    &.active {
+      background-color: #ecbb4a;
+      opacity: 1;
+    }
+    &-title {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+    }     
+  }
+
+  &__btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #ecbb4a;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: 0.4s;
+    right: -30px;  
+      
+  }
+
+  &.opened {
+    max-width: 200px;
+    .sidebar {
+      &__btn {
+        right: -5px; 
+      }
+
+      &__logo {
+        justify-content: flex-start;
+      }
+
+      &__link-title {
+        visibility: visible;
+        opacity: 1;
+      }
+  
+      &__logo-name {
+        visibility: visible;
+        opacity: 1;
+      }
+    }    
+  }
+}
